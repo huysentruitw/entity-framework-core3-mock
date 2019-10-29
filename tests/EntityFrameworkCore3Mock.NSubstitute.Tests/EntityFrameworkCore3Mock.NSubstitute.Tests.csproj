@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EntityFrameworkCoreMock.NSubstitute\EntityFrameworkCoreMock.NSubstitute.csproj" />
+    <ProjectReference Include="..\..\src\EntityFrameworkCore3Mock.NSubstitute\EntityFrameworkCore3Mock.NSubstitute.csproj" />
   </ItemGroup>
   
 </Project>

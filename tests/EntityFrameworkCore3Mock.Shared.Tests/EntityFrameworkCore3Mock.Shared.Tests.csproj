@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EntityFrameworkCoreMock.Shared\EntityFrameworkCoreMock.Shared.csproj" />
+    <ProjectReference Include="..\..\src\EntityFrameworkCore3Mock.Shared\EntityFrameworkCore3Mock.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreMock.Moq", "src\EntityFrameworkCoreMock.Moq\EntityFrameworkCoreMock.Moq.csproj", "{84B1E11A-C0A1-42F5-9F7A-0C55ED2C7D9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore3Mock.Moq", "src\EntityFrameworkCore3Mock.Moq\EntityFrameworkCore3Mock.Moq.csproj", "{84B1E11A-C0A1-42F5-9F7A-0C55ED2C7D9C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreMock.Moq.Tests", "tests\EntityFrameworkCoreMock.Moq.Tests\EntityFrameworkCoreMock.Moq.Tests.csproj", "{28EB943C-8D7B-431C-9E44-E849043FF0D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore3Mock.Moq.Tests", "tests\EntityFrameworkCore3Mock.Moq.Tests\EntityFrameworkCore3Mock.Moq.Tests.csproj", "{28EB943C-8D7B-431C-9E44-E849043FF0D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91C5E8E2-DEB7-4F2E-BBAE-2962B44F7C31}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,15 +17,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moq", "Moq", "{BCEBE803-A09
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@Shared", "@Shared", "{E5531D22-3250-4A95-8157-D292B41CD0EE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreMock.Shared", "src\EntityFrameworkCoreMock.Shared\EntityFrameworkCoreMock.Shared.csproj", "{29D0B720-5189-4A96-92E0-C69AC791C0A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore3Mock.Shared", "src\EntityFrameworkCore3Mock.Shared\EntityFrameworkCore3Mock.Shared.csproj", "{29D0B720-5189-4A96-92E0-C69AC791C0A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreMock.Shared.Tests", "tests\EntityFrameworkCoreMock.Shared.Tests\EntityFrameworkCoreMock.Shared.Tests.csproj", "{9FF1D62C-2103-41BA-98BC-FDB3C13004C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore3Mock.Shared.Tests", "tests\EntityFrameworkCore3Mock.Shared.Tests\EntityFrameworkCore3Mock.Shared.Tests.csproj", "{9FF1D62C-2103-41BA-98BC-FDB3C13004C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NSubstitute", "NSubstitute", "{6320D96B-E5E7-4183-964E-3A9CC7BAD043}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreMock.NSubstitute.Tests", "tests\EntityFrameworkCoreMock.NSubstitute.Tests\EntityFrameworkCoreMock.NSubstitute.Tests.csproj", "{8E8FB4F1-578A-4DC2-B113-97B87C0E3501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore3Mock.NSubstitute.Tests", "tests\EntityFrameworkCore3Mock.NSubstitute.Tests\EntityFrameworkCore3Mock.NSubstitute.Tests.csproj", "{8E8FB4F1-578A-4DC2-B113-97B87C0E3501}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreMock.NSubstitute", "src\EntityFrameworkCoreMock.NSubstitute\EntityFrameworkCoreMock.NSubstitute.csproj", "{2C669CD3-5428-48EE-A809-53E5B7E4E5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore3Mock.NSubstitute", "src\EntityFrameworkCore3Mock.NSubstitute\EntityFrameworkCore3Mock.NSubstitute.csproj", "{2C669CD3-5428-48EE-A809-53E5B7E4E5A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
