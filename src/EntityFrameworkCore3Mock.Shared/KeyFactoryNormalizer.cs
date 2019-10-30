@@ -18,7 +18,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     internal sealed class KeyFactoryNormalizer<TEntity>
         where TEntity : class

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using EntityFrameworkCoreMock.Tests.Models;
+using EntityFrameworkCore3Mock.Tests.Models;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace EntityFrameworkCoreMock.Tests
+namespace EntityFrameworkCore3Mock.Tests
 {
     [TestFixture]
     public class DbSetMockTests

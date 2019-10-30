@@ -17,9 +17,9 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using EntityFrameworkCoreMock.Shared.KeyFactoryBuilders;
+using EntityFrameworkCore3Mock.Shared.KeyFactoryBuilders;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public sealed class ConventionBasedKeyFactoryBuilder : KeyFactoryBuilderBase
     {

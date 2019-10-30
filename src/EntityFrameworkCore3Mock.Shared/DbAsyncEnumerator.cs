@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public class DbAsyncEnumerator<TEntity> : IAsyncEnumerator<TEntity>
     {

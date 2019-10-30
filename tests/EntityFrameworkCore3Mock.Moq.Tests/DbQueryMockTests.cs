@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EntityFrameworkCoreMock.Tests.Models;
+using EntityFrameworkCore3Mock.Tests.Models;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace EntityFrameworkCoreMock.Moq.Tests
+namespace EntityFrameworkCore3Mock.Moq.Tests
 {
     [TestFixture]
     public class DbQueryMockTests

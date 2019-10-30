@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EntityFrameworkCoreMock.Tests.Models
+namespace EntityFrameworkCore3Mock.Tests.Models
 {
     public class NoKeyModel
     {

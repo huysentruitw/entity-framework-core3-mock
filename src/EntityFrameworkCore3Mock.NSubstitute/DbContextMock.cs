@@ -24,7 +24,7 @@ using System.Threading;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
 
-namespace EntityFrameworkCoreMock.NSubstitute
+namespace EntityFrameworkCore3Mock.NSubstitute
 {
     public class DbContextMock<TDbContext> where TDbContext : DbContext
     {

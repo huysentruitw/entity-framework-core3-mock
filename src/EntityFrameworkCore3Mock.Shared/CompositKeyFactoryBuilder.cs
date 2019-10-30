@@ -18,7 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public sealed class CompositKeyFactoryBuilder : IKeyFactoryBuilder
     {

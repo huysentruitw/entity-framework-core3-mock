@@ -20,7 +20,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public class DbQueryMock<TEntity> : IDbQueryMock
         where TEntity : class

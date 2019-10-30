@@ -24,7 +24,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Moq;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public class DbSetMock<TEntity> : Mock<DbSet<TEntity>>, IDbSetMock
         where TEntity : class

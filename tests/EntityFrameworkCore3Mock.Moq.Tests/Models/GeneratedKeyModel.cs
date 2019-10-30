@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EntityFrameworkCoreMock.Tests.Models
+namespace EntityFrameworkCore3Mock.Tests.Models
 {
     public class GeneratedKeyModel
     {

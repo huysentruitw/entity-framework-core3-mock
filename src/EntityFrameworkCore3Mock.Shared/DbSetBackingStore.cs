@@ -23,7 +23,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public sealed class DbSetBackingStore<TEntity>
         where TEntity : class

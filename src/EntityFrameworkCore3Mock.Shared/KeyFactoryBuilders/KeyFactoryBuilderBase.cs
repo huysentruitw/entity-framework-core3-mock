@@ -20,7 +20,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace EntityFrameworkCoreMock.Shared.KeyFactoryBuilders
+namespace EntityFrameworkCore3Mock.Shared.KeyFactoryBuilders
 {
     public abstract class KeyFactoryBuilderBase : IKeyFactoryBuilder
     {

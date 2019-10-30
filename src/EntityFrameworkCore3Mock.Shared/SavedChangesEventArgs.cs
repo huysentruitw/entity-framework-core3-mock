@@ -16,7 +16,7 @@
 
 using System;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public sealed class SavedChangesEventArgs<TEntity> : EventArgs
         where TEntity : class

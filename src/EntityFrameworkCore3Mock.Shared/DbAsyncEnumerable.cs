@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public class DbAsyncEnumerable<TEntity> : IAsyncEnumerable<TEntity>, IOrderedQueryable<TEntity>
     {

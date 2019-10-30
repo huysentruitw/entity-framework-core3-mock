@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using EntityFrameworkCoreMock.Tests.Models;
+using EntityFrameworkCore3Mock.Tests.Models;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace EntityFrameworkCoreMock.NSubstitute.Tests
+namespace EntityFrameworkCore3Mock.NSubstitute.Tests
 {
     [TestFixture]
     public class DbContextMockTests

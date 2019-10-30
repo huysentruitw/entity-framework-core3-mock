@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public interface IDbQueryMock
     {

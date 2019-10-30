@@ -23,7 +23,7 @@ using System.Threading;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public class DbContextMock<TDbContext> : Mock<TDbContext>
         where TDbContext : DbContext

@@ -1,8 +1,8 @@
 ﻿using System;
-using EntityFrameworkCoreMock.Shared.Tests.Models;
+using EntityFrameworkCore3Mock.Shared.Tests.Models;
 using NUnit.Framework;
 
-namespace EntityFrameworkCoreMock.Shared.Tests.KeyFactoryBuilders
+namespace EntityFrameworkCore3Mock.Shared.Tests.KeyFactoryBuilders
 {
     [TestFixture]
     public class ConventionBasedKeyFactoryBuilderTests

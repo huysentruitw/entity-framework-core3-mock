@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace EntityFrameworkCoreMock.Shared.Tests
+namespace EntityFrameworkCore3Mock.Shared.Tests
 {
     [TestFixture]
     public class KeyContextTests

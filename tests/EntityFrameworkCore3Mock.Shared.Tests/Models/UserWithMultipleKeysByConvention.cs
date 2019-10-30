@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EntityFrameworkCoreMock.Shared.Tests.Models
+namespace EntityFrameworkCore3Mock.Shared.Tests.Models
 {
     public class UserWithMultipleKeysByConvention
     {

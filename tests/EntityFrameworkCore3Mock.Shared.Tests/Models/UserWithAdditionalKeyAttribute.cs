@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EntityFrameworkCoreMock.Shared.Tests.Models
+namespace EntityFrameworkCore3Mock.Shared.Tests.Models
 {
     public class UserWithAdditionalKeyAttribute : UserWithKeyAttribute
     {

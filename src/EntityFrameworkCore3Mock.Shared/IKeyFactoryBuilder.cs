@@ -16,7 +16,7 @@
 
 using System;
 
-namespace EntityFrameworkCoreMock
+namespace EntityFrameworkCore3Mock
 {
     public interface IKeyFactoryBuilder
     {
