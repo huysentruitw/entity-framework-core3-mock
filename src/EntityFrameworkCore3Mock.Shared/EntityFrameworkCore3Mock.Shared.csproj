@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Title>EntityFrameworkCoreMock.Shared</Title>
-    <Product>EntityFrameworkCoreMock</Product>
+    <Title>EntityFrameworkCore3Mock.Shared</Title>
+    <Product>EntityFrameworkCore3Mock</Product>
     <Version>1.0.0.0</Version>
     <Authors>Wouter Huysentruit</Authors>
     <Company>Wouter Huysentruit</Company>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/huysentruitw/entity-framework-core-mock/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core-mock</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core3-mock</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>Shared code for EntityFrameworkCoreMock</Description>
+    <Description>Shared code for EntityFrameworkCore3Mock</Description>
     <Copyright>Copyright 2017-2019 Wouter Huysentruit</Copyright>
   </PropertyGroup>
 
