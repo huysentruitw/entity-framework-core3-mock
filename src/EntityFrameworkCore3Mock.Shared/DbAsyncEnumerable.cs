@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Copyright 2017-2019 Wouter Huysentruit
+ *
+ * See LICENSE file.
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;

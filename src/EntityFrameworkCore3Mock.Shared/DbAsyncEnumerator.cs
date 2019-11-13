@@ -1,4 +1,10 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Copyright 2017-2019 Wouter Huysentruit
+ *
+ * See LICENSE file.
+ */
+
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
