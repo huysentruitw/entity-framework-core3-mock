@@ -5,7 +5,6 @@
  */
 
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace EntityFrameworkCore3Mock
@@ -19,9 +18,14 @@ namespace EntityFrameworkCore3Mock
             _inner = inner;
         }
 
-        public void Dispose() => _inner.Dispose();
+        public ValueTask<bool> MoveNextAsync()
+            => new ValueTask<bool>(_inner.MoveNext());
 
-        public Task<bool> MoveNext(CancellationToken cancellationToken) => Task.FromResult(_inner.MoveNext());
+        public ValueTask DisposeAsync()
+        {
+            _inner.Dispose();
+            return default;
+        }
 
         public TEntity Current => _inner.Current;
     }

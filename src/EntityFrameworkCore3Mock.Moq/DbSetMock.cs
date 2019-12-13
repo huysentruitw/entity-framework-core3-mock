@@ -34,7 +34,7 @@ namespace EntityFrameworkCore3Mock
 
             if (asyncQuerySupport)
             {
-                As<IAsyncEnumerable<TEntity>>().Setup(x => x.GetEnumerator()).Returns(() => new DbAsyncEnumerator<TEntity>(data.GetEnumerator()));
+                As<IAsyncEnumerable<TEntity>>().Setup(x => x.GetAsyncEnumerator(It.IsAny<CancellationToken>())).Returns(() => new DbAsyncEnumerator<TEntity>(data.GetEnumerator()));
             }
 
             Setup(x => x.Add(It.IsAny<TEntity>())).Callback<TEntity>(_store.Add);
@@ -47,8 +47,8 @@ namespace EntityFrameworkCore3Mock
             Setup(x => x.AddRangeAsync(It.IsAny<IEnumerable<TEntity>>(), It.IsAny<CancellationToken>())).Callback<IEnumerable<TEntity>, CancellationToken>((x, _) => _store.Add(x)).Returns(Task.CompletedTask);
 
             Setup(x => x.Find(It.IsAny<object[]>())).Returns<object[]>(_store.Find);
-            Setup(x => x.FindAsync(It.IsAny<object[]>())).Returns<object[]>(x => Task.FromResult(_store.Find(x)));
-            Setup(x => x.FindAsync(It.IsAny<object[]>(), It.IsAny<CancellationToken>())).Returns<object[], CancellationToken>((x, _) => Task.FromResult(_store.Find(x)));
+            Setup(x => x.FindAsync(It.IsAny<object[]>())).Returns<object[]>(x => new ValueTask<TEntity>(_store.Find(x)));
+            Setup(x => x.FindAsync(It.IsAny<object[]>(), It.IsAny<CancellationToken>())).Returns<object[], CancellationToken>((x, _) => new ValueTask<TEntity>(_store.Find(x)));
 
             _store.UpdateSnapshot();
         }

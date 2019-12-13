@@ -59,22 +59,6 @@ namespace EntityFrameworkCore3Mock.NSubstitute
             return mock;
         }
 
-        public DbQueryMock<TEntity> CreateDbQueryMock<TEntity>(Expression<Func<TDbContext, DbQuery<TEntity>>> dbQuerySelector, IEnumerable<TEntity> entities = null)
-            where TEntity : class
-        {
-            if (dbQuerySelector == null) throw new ArgumentNullException(nameof(dbQuerySelector));
-
-            var memberInfo = ((MemberExpression)dbQuerySelector.Body).Member;
-            if (_dbQueryCache.ContainsKey(memberInfo)) throw new ArgumentException($"DbQueryMock for {memberInfo.Name} already created", nameof(dbQuerySelector));
-            var mock = new DbQueryMock<TEntity>(entities);
-            Object.Query<TEntity>().Returns(mock.Object);
-
-            dbQuerySelector.Compile()(Object).Returns(mock.Object);
-
-            _dbQueryCache.Add(memberInfo, mock);
-            return mock;
-        }
-
         public void Reset()
         {
             _dbSetCache.Clear();
@@ -92,14 +76,6 @@ namespace EntityFrameworkCore3Mock.NSubstitute
         {
             var memberInfo = ((MemberExpression)dbSetSelector.Body).Member;
             _dbSetCache.Add(memberInfo, dbSet);
-        }
-
-        // Facilitates unit-testing
-        internal void RegisterDbQueryMock<TEntity>(Expression<Func<TDbContext, DbQuery<TEntity>>> dbQuerySelector, IDbQueryMock dbQuery)
-            where TEntity : class
-        {
-            var memberInfo = ((MemberExpression)dbQuerySelector.Body).Member;
-            _dbQueryCache.Add(memberInfo, dbQuery);
         }
 
         private int SaveChanges() => _dbSetCache.Values.Aggregate(0, (seed, dbSet) => seed + dbSet.SaveChanges());

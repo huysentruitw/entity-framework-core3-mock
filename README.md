@@ -38,14 +38,6 @@ For the Moq version, you can use all known [Moq](https://github.com/Moq/moq4/wik
         public string FullName { get; set; }
     }
 
-    public class Order
-    {
-        [Key]
-        public Guid Id { get; set; }
-
-        public DateTime DateCreated { get; set; }
-	}
-
     public class TestDbContext : DbContext
     {
         public TestDbContext(DbContextOptions<TestDbContext> options)
@@ -54,8 +46,6 @@ For the Moq version, you can use all known [Moq](https://github.com/Moq/moq4/wik
         }
 
         public virtual DbSet<User> Users { get; set; }
-
-        public virtual DbQuery<Order> Orders { get; set; }
     }
 
     public class MyTests
@@ -77,21 +67,6 @@ For the Moq version, you can use all known [Moq](https://github.com/Moq/moq4/wik
             // Query dbContextMock.Object.Users to see if certain users were added or removed
             // or use Mock Verify functionality to verify if certain methods were called: usersDbSetMock.Verify(x => x.Add(...), Times.Once);
         }
-
-        [Fact]
-        public void DbQueryTest()
-        {
-            var initialEntities = new[]
-                {
-                    new Order { Id = Guid.NewGuid(), DateCreated = DateTime.UtcNow },
-                    new Order { Id = Guid.NewGuid(), DateCreated = DateTime.UtcNow },
-                };
-
-            var dbContextMock = new DbContextMock<TestDbContext>(DummyOptions);
-            var ordersDbQueryMock = dbContextMock.CreateDbQueryMock(x => x.Orders, initialEntities);
-
-            // Pass dbContextMock.Object to the class/method you want to test
-		}
     }
 
     public DbContextOptions<TestDbContext> DummyOptions { get; } = new DbContextOptionsBuilder<TestDbContext>().Options;

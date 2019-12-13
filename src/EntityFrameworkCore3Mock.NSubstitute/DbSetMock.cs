@@ -32,15 +32,14 @@ namespace EntityFrameworkCore3Mock.NSubstitute
             Object = Substitute.For<DbSet<TEntity>, IQueryable<TEntity>, IAsyncEnumerable<TEntity>>();
 
             ((IQueryable<TEntity>)Object).Provider.Returns(asyncQuerySupport ? new DbAsyncQueryProvider<TEntity>(data.Provider) : data.Provider);
-            Object.AsQueryable().Provider.Returns(asyncQuerySupport ? new DbAsyncQueryProvider<TEntity>(data.Provider) : data.Provider);
-            Object.AsQueryable().Expression.Returns(data.Expression);
-            Object.AsQueryable().ElementType.Returns(data.ElementType);
+            ((IQueryable<TEntity>)Object).Expression.Returns(data.Expression);
+            ((IQueryable<TEntity>)Object).ElementType.Returns(data.ElementType);
             ((IQueryable<TEntity>)Object).GetEnumerator().Returns(a => data.GetEnumerator());
             ((IEnumerable)Object).GetEnumerator().Returns(a => data.GetEnumerator());
 
             if (asyncQuerySupport)
             {
-                ((IAsyncEnumerable<TEntity>)Object).GetEnumerator().Returns(a => new DbAsyncEnumerator<TEntity>(data.GetEnumerator()));
+                ((IAsyncEnumerable<TEntity>)Object).GetAsyncEnumerator(default).Returns(a => new DbAsyncEnumerator<TEntity>(data.GetEnumerator()));
             }
 
             Object.When(a => a.Add(Arg.Any<TEntity>())).Do(b => _store.Add(b.ArgAt<TEntity>(0)));
@@ -64,8 +63,8 @@ namespace EntityFrameworkCore3Mock.NSubstitute
             Object.When(a => a.RemoveRange(Arg.Any<IEnumerable<TEntity>>())).Do(b => _store.Remove(b.ArgAt<IEnumerable<TEntity>>(0)));
 
             Object.Find(Arg.Any<object[]>()).Returns(info => _store.Find(info.Args()[0] as object[]));
-            Object.FindAsync(Arg.Any<object[]>()).Returns(info => Task.FromResult(_store.Find(info.Args()[0] as object[])));
-            Object.FindAsync(Arg.Any<object[]>(), Arg.Any<CancellationToken>()).Returns(info => Task.FromResult(_store.Find(info.Args()[0] as object[])));
+            Object.FindAsync(Arg.Any<object[]>()).Returns(info => new ValueTask<TEntity>(_store.Find(info.Args()[0] as object[])));
+            Object.FindAsync(Arg.Any<object[]>(), Arg.Any<CancellationToken>()).Returns(info => new ValueTask<TEntity>(_store.Find(info.Args()[0] as object[])));
 
             _store.UpdateSnapshot();
         }
