@@ -195,6 +195,15 @@ namespace EntityFrameworkCore3Mock.Tests
             Assert.That(dbSet, Is.EqualTo(dbSetMock.Object));
         }
 
+        [Test]
+        public void DbContextMock_GenericSet_AsQueryable_ShouldReturnQueryable()
+        {
+            var dbContextMock = new DbContextMock<TestDbContext>(Options);
+            var dbSetMock = dbContextMock.CreateDbSetMock(x => x.Users);
+            var dbSet = dbContextMock.Object.Set<User>();
+            Assert.That(dbSet.AsQueryable(), Is.Not.Null);
+        }
+
         public class TestDbSetMock : IDbSetMock
         {
             public int SaveChanges() => 55861;
