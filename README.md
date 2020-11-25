@@ -4,6 +4,9 @@
 
 Easy Mock wrapper for mocking EntityFrameworkCore 3 (EFCore3) DbContext and DbSet in your unit-tests. Integrates with Moq or NSubstitute.
 
+
+This repository is for EF Core 3.x support. If you've already upgraded to EF Core 5, please visit [this repository](https://github.com/huysentruitw/entity-framework-core-mock).
+
 ## Get it on NuGet
 
 ### Moq integration
