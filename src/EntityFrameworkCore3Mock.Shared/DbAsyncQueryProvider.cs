@@ -54,11 +54,23 @@ namespace EntityFrameworkCore3Mock
         public TResult ExecuteAsync<TResult>(Expression expression, CancellationToken cancellationToken)
         {
             var expectedResultType = typeof(TResult).GetGenericArguments()[0];
-            var executionResult = typeof(IQueryProvider)
+
+#if NETSTANDARD2_1
+            var executeMethodInfo = typeof(IQueryProvider)
                 .GetMethod(
                     name: nameof(IQueryProvider.Execute),
                     genericParameterCount: 1,
                     types: new[] { typeof(Expression) })
+                ?? throw new InvalidOperationException("Execute method not found");
+#else
+            var executeMethodInfo = typeof(IQueryProvider)
+                .GetMethods()
+                .FirstOrDefault(x => x.IsGenericMethod &&
+                                     x.Name == nameof(IQueryProvider.Execute) &&
+                                     x.GetGenericArguments().Length == 1)
+                ?? throw new InvalidOperationException("Execute method not found");
+#endif
+            var executionResult = executeMethodInfo
                 .MakeGenericMethod(expectedResultType)
                 .Invoke(this, new[] { expression });
 
