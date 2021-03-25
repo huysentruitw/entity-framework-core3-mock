@@ -1,17 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <Title>EntityFrameworkCore3Mock.Shared</Title>
-    <Product>EntityFrameworkCore3Mock</Product>
-    <Version>1.0.0.0</Version>
-    <Authors>Wouter Huysentruit</Authors>
-    <Company>Wouter Huysentruit</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core3-mock</PackageProjectUrl>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Shared code for EntityFrameworkCore3Mock</Description>
-    <Copyright>Copyright 2017-2019 Wouter Huysentruit</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

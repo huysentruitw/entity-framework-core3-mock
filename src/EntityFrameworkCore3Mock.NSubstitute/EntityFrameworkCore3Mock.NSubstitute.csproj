@@ -1,17 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <Title>EntityFrameworkCore3Mock.NSubstitute</Title>
-    <Product>EntityFrameworkCore3Mock</Product>
-    <Version>1.0.0.0</Version>
-    <Authors>Wouter Huysentruit, Paul Michaels</Authors>
-    <Company>Wouter Huysentruit</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core3-mock</PackageProjectUrl>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Easy Mock wrapper for mocking EntityFrameworkCore 3 (EFCore3) DbContext and DbSet using NSubstitute</Description>
-    <Copyright>Copyright 2017-20139 Wouter Huysentruit, Paul Michaels</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,9 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net4.8;netcoreapp3.1</TargetFrameworks>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.0.0" />
     <PackageReference Include="Castle.Core" Version="4.4.0" />
@@ -16,5 +12,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\EntityFrameworkCore3Mock.NSubstitute\EntityFrameworkCore3Mock.NSubstitute.csproj" />
   </ItemGroup>
-  
+
 </Project>

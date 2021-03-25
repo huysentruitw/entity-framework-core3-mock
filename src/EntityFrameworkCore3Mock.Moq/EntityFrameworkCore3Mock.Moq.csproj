@@ -1,17 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <Title>EntityFrameworkCore3Mock.Moq</Title>
-    <Product>EntityFrameworkCore3Mock</Product>
-    <Version>1.0.0.0</Version>
-    <Authors>Wouter Huysentruit</Authors>
-    <Company>Wouter Huysentruit</Company>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core3-mock</PackageProjectUrl>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Easy Mock wrapper for mocking EntityFrameworkCore 3 (EFCore3) DbContext and DbSet using Moq</Description>
-    <Copyright>Copyright 2017-2019 Wouter Huysentruit</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

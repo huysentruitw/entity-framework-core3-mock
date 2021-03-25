@@ -1,9 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net4.8;netcoreapp3.1</TargetFrameworks>
-  </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\EntityFrameworkCore3Mock.Shared\EntityFrameworkCore3Mock.Shared.csproj" />
   </ItemGroup>
