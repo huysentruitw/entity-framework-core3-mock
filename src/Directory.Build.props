@@ -9,6 +9,7 @@
     <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core3-mock</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2017-2021 Wouter Huysentruit</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>../../Signing.snk</AssemblyOriginatorKeyFile>
