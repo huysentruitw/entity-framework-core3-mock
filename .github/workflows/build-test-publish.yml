@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build, Test, Publish
 
 on:
   push:
@@ -31,22 +31,22 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
-
-  test:
-    runs-on: windows-latest
-    needs: build
-    steps:
+      run: dotnet build --configuration Release --no-restore --output ".\artifacts" /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
     - name: Test
       run: dotnet test --configuration Release --no-restore --verbosity normal
 
-  deploy:
+  publish:
     runs-on: windows-latest
-    needs: test
     if: github.ref == 'refs/heads/master'
+    needs: build
     steps:
     - name: Publish
+      shell: pwsh
       run: |
-        dotnet nuget push src\EntityFrameworkCore3Mock.Shared\bin\Release\EntityFrameworkCore3Mock.Shared.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
-        dotnet nuget push src\EntityFrameworkCore3Mock.Moq\bin\Release\EntityFrameworkCore3Mock.Moq.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
-        dotnet nuget push src\EntityFrameworkCore3Mock.NSubstitute\bin\Release\EntityFrameworkCore3Mock.NSubstitute.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+        Get-ChildItem ".\artifacts" -Filter "*.nupkg" | ForEach-Object {
+          Write-Host "$($scriptName): Pushing $($_.Name)"
+          dotnet nuget push $_ --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+          if ($lastexitcode -ne 0) {
+            throw ("Exec: " + $errorMessage)
+          }
+        }
