@@ -1,14 +1,16 @@
-name: Build and Test
+name: Build, Test, Publish
 
 on:
   push:
-    branches: [ develop ]
+    branches:
+      - develop
+      - master
   pull_request:
-    branches: [ develop ]
+    branches:
+      - develop
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
@@ -31,4 +33,20 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
     - name: Test
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-restore --no-build --verbosity normal
+
+  publish:
+    runs-on: windows-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    steps:
+    - name: Publish
+      shell: pwsh
+      run: |
+        Get-ChildItem ".\src" -Filter "*.nupkg" -R | ForEach-Object {
+          Write-Host "$($scriptName): Pushing $($_.Name)"
+          dotnet nuget push $_ --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
+          if ($lastexitcode -ne 0) {
+            throw ("Exec: " + $errorMessage)
+          }
+        }
