@@ -4,11 +4,11 @@
     <Product>EntityFrameworkCore3Mock</Product>
     <Version>1.0.0.0</Version>
     <Authors>Wouter Huysentruit</Authors>
-    <Company>Wouter Huysentruit</Company>
+    <Company>Cup of Tea</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/huysentruitw/entity-framework-core3-mock</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/cup-of-tea-dot-be/entity-framework-core3-mock</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>Copyright 2017-2021 Wouter Huysentruit</Copyright>
+    <Copyright>Copyright 2017-2021 Cup of Tea</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
