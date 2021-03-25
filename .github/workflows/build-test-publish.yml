@@ -43,7 +43,7 @@ jobs:
     - name: Publish
       shell: pwsh
       run: |
-        Get-ChildItem ".\artifacts" -Filter "*.nupkg" -R | ForEach-Object {
+        Get-ChildItem ".\src" -Filter "*.nupkg" -R | ForEach-Object {
           Write-Host "$($scriptName): Pushing $($_.Name)"
           dotnet nuget push $_ --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
           if ($lastexitcode -ne 0) {
