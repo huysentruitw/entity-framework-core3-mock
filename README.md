@@ -1,6 +1,6 @@
 # EntityFrameworkCore3Mock
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3u9mrf907xs3wjvj/branch/master?svg=true)](https://ci.appveyor.com/project/huysentruitw/entity-framework-core3-mock/branch/master)
+![Build status](https://github.com/cup-of-tea-dot-be/entity-framework-core3-mock/actions/workflows/build-test-publish.yml/badge.svg?branch=master)
 
 Easy Mock wrapper for mocking EntityFrameworkCore 3 (EFCore3) DbContext and DbSet in your unit-tests. Integrates with Moq or NSubstitute.
 
