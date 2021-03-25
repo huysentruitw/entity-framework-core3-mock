@@ -2,13 +2,15 @@ name: Build and Test
 
 on:
   push:
-    branches: [ develop ]
+    branches:
+      - develop
+      - master
   pull_request:
-    branches: [ develop ]
+    branches:
+      - develop
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
@@ -30,5 +32,21 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+
+  test:
+    runs-on: windows-latest
+    needs: build
+    steps:
     - name: Test
       run: dotnet test --configuration Release --no-restore --verbosity normal
+
+  deploy:
+    runs-on: windows-latest
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: Publish
+      run: |
+        dotnet nuget push src\EntityFrameworkCore3Mock.Shared\bin\Release\EntityFrameworkCore3Mock.Shared.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+        dotnet nuget push src\EntityFrameworkCore3Mock.Moq\bin\Release\EntityFrameworkCore3Mock.Moq.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+        dotnet nuget push src\EntityFrameworkCore3Mock.NSubstitute\bin\Release\EntityFrameworkCore3Mock.NSubstitute.${{ steps.gitversion.outputs.nuGetVersionV2 }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
