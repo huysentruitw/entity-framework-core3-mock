@@ -31,9 +31,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore --output ".\artifacts" /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+      run: dotnet build --configuration Release --no-restore /p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
     - name: Test
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-restore --no-build --verbosity normal
 
   publish:
     runs-on: windows-latest
@@ -43,7 +43,7 @@ jobs:
     - name: Publish
       shell: pwsh
       run: |
-        Get-ChildItem ".\artifacts" -Filter "*.nupkg" | ForEach-Object {
+        Get-ChildItem ".\artifacts" -Filter "*.nupkg" -R | ForEach-Object {
           Write-Host "$($scriptName): Pushing $($_.Name)"
           dotnet nuget push $_ --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}}
           if ($lastexitcode -ne 0) {
